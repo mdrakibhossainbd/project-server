@@ -15,8 +15,8 @@ app.use(cors());
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect(err => {
-    const eventsCollection = client.db("volunteerdb").collection("events");
-    const registersCollection = client.db("volunteerdb").collection("registers");
+    const eventsCollection = client.db("personsData").collection("voluenterData");
+    const registersCollection = client.db("personsData").collection("register");
 
     app.get('/events', (req, res) => {
         eventsCollection.find({})
